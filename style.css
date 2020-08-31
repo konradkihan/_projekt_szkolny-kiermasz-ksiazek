@@ -1,0 +1,50 @@
+html *
+{
+    font-family: "Lato", "sans-serif";
+}
+#header
+{
+    background-color: #444444;
+    color: #FFFFFF;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: "Lato", "sans-serif";
+    text-align: center;
+    padding: 20px;
+}
+
+.menu a:link, .menu a:visited
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 20px;
+    font-weight: lighter;
+}
+
+.info
+{
+    margin: auto;
+    width: 50%;
+    font-size: 20px;
+    border-left: 6px solid #444444;
+    border-right: 6px solid #444444;
+    border-bottom: 6px solid #444444;
+    padding: 10px;
+    text-align: center;
+    height: 100%;
+    
+    
+}
+.input
+{
+    font-size: 20px;
+    width: 50%;
+    border: 3px solid #444444;
+    margin: 10px;
+    text-align: center;
+}
+#button
+{
+    font-size: 20px;
+    margin-top: 15px;
+}
