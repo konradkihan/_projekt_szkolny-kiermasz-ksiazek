@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="E-Kiermasz książek ZSŁ Gdańsk 2020">
-        <meta name="author" content="Krzysztof Madajczak / EwQ">
+        <meta name="author" content="Krzysztof Madajczak">
         <link rel="stylesheet" href="style.css">
         <title>e-kiermasz książek ZSŁ Gdańsk</title>
     </head>
@@ -11,12 +11,12 @@
     <div id="header">
         Witaj na stronie wprowadzania oferty! <br> <br>
         <div class="menu">
-            <a href="mainpage.html">Strona główna</a>
+            <a href="index.html">Strona główna</a>
             <a href="shoppage.php">Sklep</a>
             <!-- <a href="addproductpage.html">Dodaj ofertę</a> -->
         </div>
     </div>
-    <form action="addproduct.php" method="POST">
+    <form action="addproduct.php" method="POST" id="myForm">
         <div class="info">
             <h3>Tutaj podaj dane o produkcie, który chcesz sprzedać:</h3>
             <input type="text" name="product_name" class="input" placeholder="Nazwa produktu" required> <br>
@@ -29,10 +29,10 @@
             </select> <br>
             <select name="product_class" class="input">
                 <option value="" selected disabled hidden>Do której klasy przeznaczony jest produkt</option>
-                <option value="1">do klasy 1</option>
-                <option value="2">do klasy 2</option>
-                <option value="3">do klasy 3</option>
-                <option value="4">do klasy 4</option>
+                <option value="c1">do klasy 1</option>
+                <option value="c2">do klasy 2</option>
+                <option value="c3">do klasy 3</option>
+                <option value="c4">do klasy 4</option>
             </select>
             <!-- <input type="image" name="product_image" class="input"> -->
         </div>
@@ -45,11 +45,11 @@
             <input type="text" name="seller_surname" class="input" placeholder="Nazwisko" required> <br>
             <select name="seller_class" class="input">
                 <option value="" selected disabled hidden>Twoja obecna klasa</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+                <option value="c2">2</option>
+                <option value="c3">3</option>
+                <option value="c4">4</option>
             </select> <br>
-            <button id="button">Potwierdź dodanie</button>
+            <button id="button" >Potwierdź dodanie</button>
         </div>
     </form>   
     

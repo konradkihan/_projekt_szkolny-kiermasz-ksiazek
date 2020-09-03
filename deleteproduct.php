@@ -13,7 +13,7 @@
         $query_to_delete = "DELETE FROM product_info WHERE name like '$del_name' AND sellerid like '$del_code';";
         mysqli_query($connect, $query_to_delete);
 
-        header("Location: mainpage.html");
+        header("Location: index.html");
         exit();
 
         mysqli_close($connect);

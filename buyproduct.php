@@ -11,7 +11,7 @@
     <div id="header">
             Witaj na stronie e-kiermaszu ZSŁ! <br> <br>
             <div class="menu">
-                <a href="mainpage.html">Strona główna</a>
+                <a href="index.html">Strona główna</a>
                 <a href="shoppage.php">Wróć</a>
                 <a href="addproductpage.html">Dodaj ofertę</a>
             </div>
