@@ -29,7 +29,7 @@
             $product_class = $_POST["product_class"];
 
 
-            $query= "SELECT seller_info.name, product_info.name, product_info.price, product_info.state, product_info.class FROM `seller_info`, `product_info` WHERE product_info.sellerid like seller_info.sellerid AND product_info.class like '" . $product_class . "';";
+            $query= "SELECT seller_info.name, product_info.name, seller_info.contact, product_info.price, product_info.state, product_info.class FROM `seller_info`, `product_info` WHERE product_info.sellerid like seller_info.sellerid AND product_info.class like '" . $product_class . "';";
             
             $result = mysqli_query($connect,$query);
 
@@ -39,9 +39,10 @@
                 echo("<div class='post'>
                         Imię sprzedającego: ". $row[0] . "<br>
                         Nazwa produktu: ". $row[1] . "<br>
-                        Cena: ". $row[2] ." PLN<br>
-                        Stan produktu: ". $row[3] ."<br>
-                        Klasa: ". $row[4][1]. "
+                        Kontakt" . $row[2] . "<br>
+                        Cena: ". $row[3] ." PLN<br>
+                        Stan produktu: ". $row[4] ."<br>
+                        Klasa: ". $row[5][1]. "
                         </div>");
             }
         

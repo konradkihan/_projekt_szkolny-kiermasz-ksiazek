@@ -31,26 +31,41 @@ function addproduct(){
     mysqli_query($connect, $query_to_product);
     mysqli_query($connect, $query_to_seller);
     mysqli_close($connect);
-    echo("<link rel='stylesheet' href='style.css'>
-    <div id='header' onload='delete'>
-    Twoje ogłoszenie zostało przyjęte. Zapisz te dane:<br> <br>
-    Kod użytkownika: " . $seller_username . " , a nazwa produktu to: " . $product_name ." 
-    <h6>Zostaniesz przekierowany na inną stronę za 10 sekund!<br><br>
-    <div class='menu'>
-        <a href='index.html'>Strona główna</a>
-        <a href='shoppage.html'>Sklep</a>
-        <a href='addproduct.php'>Dodaj kolejną ofertę</a>
-    </div>
-    <script>
-        function delete(){
-            document.getElementById('myForm').reset();
-        } 
-    </script>");
-    header('Refresh: 11; index.html');
-    exit();
+
+    // INITIALLY/TEMPORARLY DELETED \\
+
+    // echo("<link rel='stylesheet' href='style.css'>
+    // <div id='header' onload='delete'>
+    // Twoje ogłoszenie zostało przyjęte. Zapisz te dane:<br> <br>
+    // Kod użytkownika: " . $seller_username . " , a nazwa produktu to: " . $product_name ." 
+    // <h6>Zostaniesz przekierowany na inną stronę za 10 sekund!<br><br>
+    // <div class='menu'>
+    //     <a href='index.html'>Strona główna</a>
+    //     <a href='shoppage.html'>Sklep</a>
+    //     <a href='addproduct.php'>Dodaj kolejną ofertę</a>
+    // </div>
+    // <script>
+    //     function delete(){
+    //         document.getElementById('myForm').reset();
+    //     } 
+    // </script>");
+    // header('Refresh: 11; index.html');
+    // exit();
+
+    // ENDOF DELETED SNIPPET \\
 }
 
-    addproduct();
+// function showBooks(){
+//     require_once "connection.php";
+//     session_start();
+//     $connect = mysqli_connect($hostname, $login, $password, $dataBase);
+    
+//     $query = "SELECT book_name FROM books;";
+//     $result = mysqli_query($connect, $query);
+
+//     return $result;
+
+// }
 
 ?>
         

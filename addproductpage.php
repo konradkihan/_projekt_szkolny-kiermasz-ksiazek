@@ -17,23 +17,32 @@
 			</ol>
             <!-- <a href="addproductpage.html">Dodaj ofertę</a> -->
         </div>
-		 <div style="clear: both;"></div>
+    <div style="clear: both;"></div> 
     
     <form action="addproduct.php" method="POST" id="myForm">
         <div class="info">
             <h3>Tutaj podaj dane o produkcie, który chcesz sprzedać:</h3>
-            <!-- <input type="text" name="product_name" class="input" placeholder="Nazwa produktu" required> <br> -->
             
             <select name="product_name", class="input" required>
-                
-            </select>
+                <option value="" selected disabled hidden>Przedmiot</option>
+                <!--<?php
+                    // require_once "connection.php";
+                    // $connect = mysqli_connect($hostname, $login, $password, $dataBase);
+                    // $query = "SELECT book_name FROM books;"; //TODO push to addproduct.php
+                    // $result = mysqli_query($connect, $query);
+                    // while($row = mysqli_fetch_array($result)){
+                    //     echo("option value=".$row[0].">".$row[0]."</option>");
+                    // }
+                    // mysqli_close($connect)
+                ?>-->
+            </select> <br>
 
             <input type="number" name="product_price" class="input" placeholder="Cena [PLN]" required> <br>
             <select name="product_state" class="input" required>
                 <option value="" selected disabled hidden>Stan produktu</option>
-                <option value="Znakomita">Bardzo dobry</option>
-                <option value="Poprawna">Dobry</option>
-                <option value="Kiepska">Poprawny</option>
+                <option value="Bardzo dobry">Bardzo dobry</option>
+                <option value="Dobry">Dobry</option>
+                <option value="Poprawny">Poprawny</option>
             </select> <br>
             <select name="product_class" class="input">
                 <option value="" selected disabled hidden>Do której klasy przeznaczony jest produkt</option>
@@ -57,19 +66,9 @@
                 <option value="c3">3</option>
                 <option value="c4">4</option>
             </select> <br>
-            <button id="button" >Potwierdź dodanie</button>
+            <button id="button">Potwierdź dodanie</button>
         </div>
     </form>   
-    
-    <form action="deleteproduct.php" method="POST">
-        <div class="info">
-            <h3>Jeśli chcesz usunąć swój produkt:</h3>
-            <input type="text" name="del_code" class="input" placeholder="Twój kod dostępu" required>
-            <input type="text" name="del_name" class="input" placeholder="Nazwa ogłoszenia" required> <br>
-            <button id="button">Usuń produkt</button>
-        </div>
-    </form>
-
 
 </html>
 

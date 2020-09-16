@@ -1,4 +1,4 @@
-<?php   
+<?php
     //deletes product from the database basing on product code and product name, leaves user's data in DB
     function deleteproduct(){
         //conect to DB
