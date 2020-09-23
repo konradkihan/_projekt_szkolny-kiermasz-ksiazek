@@ -31,7 +31,7 @@ function addproduct(){
     mysqli_query($connect, $query_to_product);
     mysqli_query($connect, $query_to_seller);
     mysqli_close($connect);
-
+    echo($product_name);
     // INITIALLY/TEMPORARLY DELETED \\
 
     // echo("<link rel='stylesheet' href='style.css'>
@@ -66,6 +66,6 @@ function addproduct(){
 //     return $result;
 
 // }
-
+        addproduct()
 ?>
         
