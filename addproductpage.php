@@ -25,16 +25,16 @@
             
             <select name="product_name", class="input" required>
                 <option value="" selected disabled hidden>Przedmiot</option>
-                <!--<?php
-                    // require_once "connection.php";
-                    // $connect = mysqli_connect($hostname, $login, $password, $dataBase);
-                    // $query = "SELECT book_name FROM books;"; //TODO push to addproduct.php
-                    // $result = mysqli_query($connect, $query);
-                    // while($row = mysqli_fetch_array($result)){
-                    //     echo("option value=".$row[0].">".$row[0]."</option>");
-                    // }
-                    // mysqli_close($connect)
-                ?>-->
+                <?php
+                    require_once "connection.php";
+                    $connect = mysqli_connect($hostname, $login, $password, $dataBase);
+                    $query = "SELECT book_name FROM books;";
+                    $result = mysqli_query($connect, $query);
+                    while($row = mysqli_fetch_array($result)){
+                        echo("<option value=".$row[0].">".$row[0]."</option>");
+                    }
+                    mysqli_close($connect)
+                ?>
             </select> <br>
 
             <input type="number" name="product_price" class="input" placeholder="Cena [PLN]" required> <br>
