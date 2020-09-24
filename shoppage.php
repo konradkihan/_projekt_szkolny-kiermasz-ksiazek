@@ -16,23 +16,20 @@
                 <a href="addproductpage.html">Dodaj ofertę</a>
             </div>
         </div>
-    <!-- This one displays filters -->
-    
+        <!-- This one displays filters -->
         <div class="info">
             <div class="filters">
-            <form action="buyproduct.php" method="POST">
-                <select name="product_class" class="input">
-                    <option value="" selected disabled hidden>Klasa</option>
-                    <option value="c1">do klasy 1</option>
-                    <option value="c2">do klasy 2</option>
-                    <option value="c3">do klasy 3</option>
-                    <option value="c4">do klasy 4</option>
-                </select> <br>
-                <input type="submit" value="Potwierdź"> 
-            </form> 
-        </div>
-        
-    </div>           
-    
+                <form action="buyproduct.php" method="POST">
+                    <select name="product_class" class="input">
+                        <option value="" selected disabled hidden>Klasa</option>
+                        <option value="c1">do klasy 1</option>
+                        <option value="c2">do klasy 2</option>
+                        <option value="c3">do klasy 3</option>
+                        <option value="c4">do klasy 4</option>
+                    </select> <br>
+                    <input type="submit" value="Potwierdź"> 
+                </form> 
+            </div>
+        </div>           
     </body>
 </html>

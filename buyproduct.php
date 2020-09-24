@@ -8,44 +8,19 @@
         <title>Sklep - Kiermasz książek ZSŁ Gdańsk</title>
     </head>
     <body>   
-    <div id="header">
-            Witaj na stronie e-kiermaszu ZSŁ! <br> <br>
-            <div class="menu">
-                <a href="index.html">Strona główna</a>
-                <a href="shoppage.php">Wróć</a>
-                <a href="addproductpage.html">Dodaj ofertę</a>
+        <div id="header">
+                Witaj na stronie e-kiermaszu ZSŁ! <br> <br>
+                <div class="menu">
+                    <a href="index.html">Strona główna</a>
+                    <a href="shoppage.php">Wróć</a>
+                    <a href="addproductpage.html">Dodaj ofertę</a>
+                </div>
             </div>
-        </div>
+        </div>           
         
-    </div>           
-    
-    <?php
-        
-            //connect to DB
-            require_once "connection.php";
-            session_start();
-            $connect = mysqli_connect($hostname, $login, $password, $dataBase);
-                
-            $product_class = $_POST["product_class"];
-
-
-            $query= "SELECT seller_info.name, product_info.name, seller_info.contact, product_info.price, product_info.state, product_info.class FROM `seller_info`, `product_info` WHERE product_info.sellerid like seller_info.sellerid AND product_info.class like '" . $product_class . "';";
-            
-            $result = mysqli_query($connect,$query);
-
-
-            
-            while($row = mysqli_fetch_array($result)){
-                echo("<div class='post'>
-                        Imię sprzedającego: ". $row[0] . "<br>
-                        Nazwa produktu: ". $row[1] . "<br>
-                        Kontakt" . $row[2] . "<br>
-                        Cena: ". $row[3] ." PLN<br>
-                        Stan produktu: ". $row[4] ."<br>
-                        Klasa: ". $row[5][1]. "
-                        </div>");
-            }
-        
-    ?>
-</body>
+        <?php
+            require "scripts.php";
+            buyProduct();
+        ?>
+    </body>
 </html>

@@ -19,21 +19,15 @@
         </div>
     <div style="clear: both;"></div> 
     
-    <form action="addproduct.php" method="POST" id="myForm">
+    <form action="scripts.php" method="POST" id="myForm">
         <div class="info">
             <h3>Tutaj podaj dane o produkcie, który chcesz sprzedać:</h3>
             
             <select name="product_name", class="input" required>
                 <option value="" selected disabled hidden>Przedmiot</option>
                 <?php
-                    require_once "connection.php";
-                    $connect = mysqli_connect($hostname, $login, $password, $dataBase);
-                    $query = "SELECT book_name FROM books;";
-                    $result = mysqli_query($connect, $query);
-                    while($row = mysqli_fetch_array($result)){
-                        echo("<option>".$row[0]."</option>");
-                    }
-                    mysqli_close($connect)
+                    require "scripts.php";
+                    addProductSelect();
                 ?>
             </select> <br>
 
@@ -66,7 +60,7 @@
                 <option value="c3">3</option>
                 <option value="c4">4</option>
             </select> <br>
-            <button id="button">Potwierdź dodanie</button>
+            <input type="submit" value="Potwierdź dodanie" name="addProduct">
         </div>
     </form>   
 
@@ -75,6 +69,6 @@
 <script>
     //just a simple note for user
     function changeContact(){
-        alert("Możesz tu podać dowolną formę kontaktu - email, numer telefonu, czy też Tag do facebooka. Pamiętaj jednak, że TE DANE BĘDĄ WIDOCZNE DLA WSZYSTKICH, którzy odwiedzą tę stronę. Wprowadzając dane zgadzasz się na regulamin polityki prywatności strony i regulamin prowadzenia kiermaszu.")
+        //alert("Możesz tu podać dowolną formę kontaktu - email, numer telefonu, czy też Tag do facebooka. Pamiętaj jednak, że TE DANE BĘDĄ WIDOCZNE DLA WSZYSTKICH, którzy odwiedzą tę stronę. Wprowadzając dane zgadzasz się na regulamin polityki prywatności strony i regulamin prowadzenia kiermaszu.")
     }
 </script>
