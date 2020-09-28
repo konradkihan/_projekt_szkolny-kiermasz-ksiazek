@@ -1,7 +1,7 @@
 <?php
 function addProduct(){
     //connect to DB
-    require_once "connection.php";
+    require "connection.php";
     session_start();
     $connect = mysqli_connect($hostname, $login, $password, $dataBase);
 
@@ -38,7 +38,7 @@ function addProduct(){
         //  INITIALLY DELETED   \\
 // function deleteProduct(){
 //     //conect to DB
-//     require_once "connection.php";
+//     require "connection.php";
 //     session_start();
 //     $connect = mysqli_connect($hostname, $login, $password, $dataBase);
 
@@ -59,7 +59,7 @@ function addProduct(){
 
 function buyProduct(){
     //connect to DB
-    require_once "connection.php";
+    require "connection.php";
     session_start();
     $connect = mysqli_connect($hostname, $login, $password, $dataBase);
         
@@ -86,7 +86,7 @@ function buyProduct(){
 
 
 function addProductSelect(){
-    require_once "connection.php";
+    require "connection.php";
                     $connect = mysqli_connect($hostname, $login, $password, $dataBase);
                     $query = "SELECT book_name FROM books;";
                     $result = mysqli_query($connect, $query);
@@ -96,9 +96,36 @@ function addProductSelect(){
                     mysqli_close($connect);
 }
 
+function reChaptcha(){
+    //reCAPTCHA lib + secret key
+    require "recaptchalib.php";
+    $secretKey = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
+    
+    //response and secret check
+    $response = null;
+    $reCaptcha = new ReCaptcha($secretKey);
+    
+    if ($_POST["g-recaptcha-response"]){
+        $response = $reCaptcha->verifyResponse(
+            $_SERVER["REMOTE_ADDR"],
+            $_POST["g-recaptcha-response"]
+        );
+    }
+    if ($response != null && $response->success) {
+        return true;
+        echo("OK");
+    }
+    else{
+        return false;
+        echo("FAIL");
+    }
+}
+
 function execute(){
     if(isset($_POST['addProduct'])){
-        addProduct();
+        if(reChaptcha()){
+            addProduct();
+        }
     }
 
 }
